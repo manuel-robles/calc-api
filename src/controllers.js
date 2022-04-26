@@ -60,7 +60,7 @@ router.get("/mul/:a/:b", async function (req, res) {
 router.get("/div/:a/:b", async function (req, res) {
     // Tener en cuenta division por 0
     // Si b es 0 retornar "Error: div by 0"
-
+    console.log("hola");
     return res.send({ result: "No implementado" });
 });
 
