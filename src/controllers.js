@@ -22,6 +22,7 @@ router.get("/add/:a/:b", async function (req, res) {
 });
 
 router.get("/res/:a/:b", async function (req, res) {
+    
     const params = req.params;
     const a = Number(params.a);
     const b = Number(params.b);
@@ -35,7 +36,6 @@ router.get("/res/:a/:b", async function (req, res) {
         },
         result,
     });
-
     return res.send({ result });
 });
 
