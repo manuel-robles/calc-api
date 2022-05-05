@@ -21,6 +21,7 @@ router.get("/add/:a/:b", async function (req, res) {
     return res.send({ result });
 });
 
+/*Función resta*/
 router.get("/res/:a/:b", async function (req, res) {
     const params = req.params;
     const a = Number(params.a);
