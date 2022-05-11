@@ -69,7 +69,7 @@ router.get("/div/:a/:b", async function (req, res) {
     return "Error: div by 0";
 
     await Operation.create({
-        type: "ADD",
+        type: "DIV",
         args: {
             a: a,
             b: b,
