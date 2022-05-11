@@ -59,6 +59,7 @@ router.get("/mul/:a/:b", async function (req, res) {
 });
 
 router.get("/div/:a/:b", async function (req, res) {
+<<<<<<< HEAD
     // Tener en cuenta division por 0
     // Si b es 0 retornar "Error: div by 0"
     const params = req.params;
@@ -67,6 +68,8 @@ router.get("/div/:a/:b", async function (req, res) {
     const result = a / b;
 
 
+=======
+>>>>>>> 4cd5477c90206b1c66ae4f73e5d3ce0d8891e81b
     const params = req.params;
     const a = Number(params.a);
     const b = Number(params.b);
@@ -74,7 +77,10 @@ router.get("/div/:a/:b", async function (req, res) {
         return res.send({ result: "Error: div by 0" });
     }
     const result = a / b;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4cd5477c90206b1c66ae4f73e5d3ce0d8891e81b
     await Operation.create({
         type: "DIV",
         args: {
@@ -83,7 +89,10 @@ router.get("/div/:a/:b", async function (req, res) {
         },
         result,
     });
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4cd5477c90206b1c66ae4f73e5d3ce0d8891e81b
     return res.send({ result });
 });
 
