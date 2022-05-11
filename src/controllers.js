@@ -21,6 +21,7 @@ router.get("/add/:a/:b", async function (req, res) {
     return res.send({ result });
 });
 
+/*Función resta*/
 router.get("/res/:a/:b", async function (req, res) {
     const params = req.params;
     const a = Number(params.a);
@@ -65,8 +66,14 @@ router.get("/div/:a/:b", async function (req, res) {
     const b = Number(params.b);
     const result = a / b;
 
-    if (b != 0);
-    return "Error: div by 0";
+
+    const params = req.params;
+    const a = Number(params.a);
+    const b = Number(params.b);
+    if (!b) {
+        return res.send({ result: "Error: div by 0" });
+    }
+    const result = a / b;
 
     await Operation.create({
         type: "DIV",
@@ -77,12 +84,11 @@ router.get("/div/:a/:b", async function (req, res) {
         result,
     });
 
-
     return res.send({ result });
 });
 
 router.get("/history", async function (req, res) {
-    return res.send({ result: "No implementado" });
+    res.send(await Operation.findAll());
 });
 
 module.exports = router;
